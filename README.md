@@ -1,22 +1,31 @@
-# Cost Calculator
+Cost Calculator
+A simple Java console application for managing incomes and expenses.
 
-Jednoduchá konzolová aplikácia v Jave na správu príjmov a výdavkov.
+Features:
+Add income
 
-## Funkcie:
-- Pridať príjem
-- Pridať výdavok
-- Zobraziť aktuálny zostatok (príjmy - výdavky)
-- Ukončiť program
+Add expense
 
-## Použitie:
-1. Spusti program.
-2. Vyber možnosť zo zoznamu:
-   - 1 - Pridať príjem
-   - 2 - Pridať výdavok
-   - 3 - Zobraziť aktuálny zostatok
-   - 0 - Ukončiť program
+Show current balance (incomes - expenses)
 
-## Technológie:
-- Java
-- IntelliJ IDEA
-- Git & GitHub
+Exit the program
+
+Usage:
+Run the program.
+
+Choose an option from the menu:
+
+1 - Add income
+
+2 - Add expense
+
+3 - Show current balance
+
+0 - Exit the program
+
+Technologies:
+Java
+
+IntelliJ IDEA
+
+Git & GitHub
