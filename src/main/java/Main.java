@@ -1,7 +1,28 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Simple console application for tracking incomes and expenses.
+ *
+ * <p>The program allows the user to:
+ * <ul>
+ *     <li>Add income</li>
+ *     <li>Add expense</li>
+ *     <li>Display total income, expenses and balance</li>
+ * </ul>
+ *
+ * <p>Data is stored in memory using ArrayLists and is not persisted.</p>
+ */
 public class Main {
+
+    /**
+     * Entry point of the application.
+     *
+     * <p>Handles user interaction through console menu,
+     * processes user input and performs selected operations.</p>
+     *
+     * @param args command-line arguments (not used)
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Double> incomes = new ArrayList<>();
@@ -38,14 +59,17 @@ public class Main {
                 case 3:
                     System.out.println("Selected option: Show amount");
                     double totalIncome = 0;
-                    for ( double income : incomes){
+                    for (double income : incomes) {
                         totalIncome += income;
                     }
+
                     double totalExpenses = 0;
                     for (double expense : expenses) {
                         totalExpenses += expense;
                     }
+
                     double balance = totalIncome - totalExpenses;
+
                     System.out.println("Total income: " + totalIncome);
                     System.out.println("Total expenses: " + totalExpenses);
                     System.out.println("Current balance: " + balance);
@@ -59,25 +83,41 @@ public class Main {
                     System.out.println("Wrong number. Please select only 1 to 3 or 0. Thank you");
                     break;
             }
+
             if (choice == 0) {
                 break;
             }
         }
     }
 
+    /**
+     * Reads and validates a numeric amount from user input.
+     *
+     * <p>The method repeatedly asks the user for input until a valid
+     * non-negative number is entered.</p>
+     *
+     * @param scanner scanner used for reading user input
+     * @param message message displayed to the user
+     * @return valid non-negative amount
+     */
     public static double getValidAmount(Scanner scanner, String message) {
         double amount = -1;
+
         while (amount < 0) {
             System.out.println(message);
+
             try {
                 amount = Double.parseDouble(scanner.nextLine());
+
                 if (amount < 0) {
                     System.out.println("Amount cannot be negative.");
                 }
+
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input. Please enter a valid number.");
             }
         }
+
         return amount;
     }
 }
