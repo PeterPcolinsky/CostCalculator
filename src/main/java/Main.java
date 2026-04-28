@@ -58,16 +58,9 @@ public class Main {
 
                 case 3:
                     System.out.println("Selected option: Show amount");
-                    double totalIncome = 0;
-                    for (double income : incomes) {
-                        totalIncome += income;
-                    }
 
-                    double totalExpenses = 0;
-                    for (double expense : expenses) {
-                        totalExpenses += expense;
-                    }
-
+                    double totalIncome = calculateSum(incomes);
+                    double totalExpenses = calculateSum(expenses);
                     double balance = totalIncome - totalExpenses;
 
                     System.out.println("Total income: " + totalIncome);
@@ -119,5 +112,21 @@ public class Main {
         }
 
         return amount;
+    }
+
+    /**
+     * Calculates the sum of all values in the given list.
+     *
+     * @param list list of numeric values
+     * @return sum of all values
+     */
+    private static double calculateSum(ArrayList<Double> list) {
+        double sum = 0;
+
+        for (double value : list) {
+            sum += value;
+        }
+
+        return sum;
     }
 }
