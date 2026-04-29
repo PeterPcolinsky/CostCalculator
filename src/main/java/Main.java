@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -11,7 +12,7 @@ import java.util.Scanner;
  *     <li>Display total income, expenses and balance</li>
  * </ul>
  *
- * <p>Data is stored in memory using ArrayLists and is not persisted.</p>
+ * <p>Data is stored in memory using Lists and is not persisted.</p>
  */
 public class Main {
 
@@ -25,8 +26,8 @@ public class Main {
      */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<Double> incomes = new ArrayList<>();
-        ArrayList<Double> expenses = new ArrayList<>();
+        List<Double> incomes = new ArrayList<>();
+        List<Double> expenses = new ArrayList<>();
 
         System.out.println("Welcome to Cost Calculator!");
 
@@ -120,7 +121,7 @@ public class Main {
      * @param list list of numeric values
      * @return sum of all values
      */
-    private static double calculateSum(ArrayList<Double> list) {
+    private static double calculateSum(List<Double> list) {
         double sum = 0;
 
         for (double value : list) {
