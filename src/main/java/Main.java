@@ -32,13 +32,7 @@ public class Main {
         System.out.println("Welcome to Cost Calculator!");
 
         while (true) {
-            System.out.println();
-            System.out.println("Choose one of the options:");
-            System.out.println("1 - Add income");
-            System.out.println("2 - Add an expense");
-            System.out.println("3 - Show amount");
-            System.out.println("0 - Exit the program");
-            System.out.println("Enter your choice: ");
+            printMenu();
 
             int choice = Integer.parseInt(scanner.nextLine());
 
@@ -82,6 +76,19 @@ public class Main {
                 break;
             }
         }
+    }
+
+    /**
+     * Prints the main menu options to the console.
+     */
+    private static void printMenu() {
+        System.out.println();
+        System.out.println("Choose one of the options:");
+        System.out.println("1 - Add income");
+        System.out.println("2 - Add an expense");
+        System.out.println("3 - Show amount");
+        System.out.println("0 - Exit the program");
+        System.out.println("Enter your choice: ");
     }
 
     /**
