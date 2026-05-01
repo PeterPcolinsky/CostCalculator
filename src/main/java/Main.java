@@ -34,7 +34,7 @@ public class Main {
         while (true) {
             printMenu();
 
-            int choice = Integer.parseInt(scanner.nextLine());
+            int choice = getValidChoice(scanner);
 
             switch (choice) {
                 case 1:
@@ -89,6 +89,31 @@ public class Main {
         System.out.println("3 - Show amount");
         System.out.println("0 - Exit the program");
         System.out.println("Enter your choice: ");
+    }
+
+    /**
+     * Reads and validates menu choice input from the user.
+     *
+     * <p>The method ensures that the input is a number between 0 and 3.</p>
+     *
+     * @param scanner scanner used for reading user input
+     * @return valid menu choice
+     */
+    private static int getValidChoice(Scanner scanner) {
+        while (true) {
+            try {
+                int choice = Integer.parseInt(scanner.nextLine());
+
+                if (choice >= 0 && choice <= 3) {
+                    return choice;
+                } else {
+                    System.out.println("Please enter a number between 0 and 3.");
+                }
+
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a number.");
+            }
+        }
     }
 
     /**
