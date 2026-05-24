@@ -16,6 +16,11 @@ import java.util.Scanner;
  */
 public class Main {
 
+    private static final int OPTION_EXIT = 0;
+    private static final int OPTION_ADD_INCOME = 1;
+    private static final int OPTION_ADD_EXPENSE = 2;
+    private static final int OPTION_SHOW_BALANCE = 3;
+
     /**
      * Entry point of the application.
      *
@@ -37,21 +42,21 @@ public class Main {
             int choice = getValidChoice(scanner);
 
             switch (choice) {
-                case 1:
+                case OPTION_ADD_INCOME:
                     System.out.println("Selected option: Add income");
                     double incomeAmount = getValidAmount(scanner, "Enter income amount:");
                     incomes.add(incomeAmount);
                     System.out.println("Income added successfully!");
                     break;
 
-                case 2:
+                case OPTION_ADD_EXPENSE:
                     System.out.println("Selected option: Add expense");
                     double expenseAmount = getValidAmount(scanner, "Enter expense amount:");
                     expenses.add(expenseAmount);
                     System.out.println("Expense added successfully!");
                     break;
 
-                case 3:
+                case OPTION_SHOW_BALANCE:
                     System.out.println("Selected option: Show amount");
 
                     double totalIncome = calculateSum(incomes);
@@ -63,7 +68,7 @@ public class Main {
                     System.out.println("Current balance: " + balance);
                     break;
 
-                case 0:
+                case OPTION_EXIT:
                     System.out.println("I'm ending the program...");
                     break;
 
@@ -72,7 +77,7 @@ public class Main {
                     break;
             }
 
-            if (choice == 0) {
+            if (choice == OPTION_EXIT) {
                 break;
             }
         }
