@@ -21,6 +21,10 @@ public class Main {
     private static final int OPTION_ADD_EXPENSE = 2;
     private static final int OPTION_SHOW_BALANCE = 3;
 
+    private static final String MESSAGE_INCOME_ADDED = "Income added successfully!";
+    private static final String MESSAGE_EXPENSE_ADDED = "Expense added successfully!";
+    private static final String MESSAGE_INVALID_NUMBER = "Invalid input. Please enter a number.";
+
     /**
      * Entry point of the application.
      *
@@ -46,14 +50,14 @@ public class Main {
                     System.out.println("Selected option: Add income");
                     double incomeAmount = getValidAmount(scanner, "Enter income amount:");
                     incomes.add(incomeAmount);
-                    System.out.println("Income added successfully!");
+                    System.out.println(MESSAGE_INCOME_ADDED);
                     break;
 
                 case OPTION_ADD_EXPENSE:
                     System.out.println("Selected option: Add expense");
                     double expenseAmount = getValidAmount(scanner, "Enter expense amount:");
                     expenses.add(expenseAmount);
-                    System.out.println("Expense added successfully!");
+                    System.out.println(MESSAGE_EXPENSE_ADDED);
                     break;
 
                 case OPTION_SHOW_BALANCE:
@@ -116,7 +120,7 @@ public class Main {
                 }
 
             } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please enter a number.");
+                System.out.println(MESSAGE_INVALID_NUMBER);
             }
         }
     }
