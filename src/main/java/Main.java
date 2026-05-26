@@ -25,6 +25,12 @@ public class Main {
     private static final String MESSAGE_EXPENSE_ADDED = "Expense added successfully!";
     private static final String MESSAGE_INVALID_NUMBER = "Invalid input. Please enter a number.";
 
+    private static final String MESSAGE_INVALID_AMOUNT =
+            "Invalid input. Please enter a valid number.";
+
+    private static final String MESSAGE_NEGATIVE_AMOUNT =
+            "Amount cannot be negative.";
+
     /**
      * Entry point of the application.
      *
@@ -145,11 +151,11 @@ public class Main {
                 amount = Double.parseDouble(scanner.nextLine());
 
                 if (amount < 0) {
-                    System.out.println("Amount cannot be negative.");
+                    System.out.println(MESSAGE_NEGATIVE_AMOUNT);
                 }
 
             } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please enter a valid number.");
+                System.out.println(MESSAGE_INVALID_AMOUNT);
             }
         }
 
