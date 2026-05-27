@@ -53,10 +53,7 @@ public class Main {
 
             switch (choice) {
                 case OPTION_ADD_INCOME:
-                    System.out.println("Selected option: Add income");
-                    double incomeAmount = getValidAmount(scanner, "Enter income amount:");
-                    incomes.add(incomeAmount);
-                    System.out.println(MESSAGE_INCOME_ADDED);
+                    handleAddIncome(scanner, incomes);
                     break;
 
                 case OPTION_ADD_EXPENSE:
@@ -91,6 +88,22 @@ public class Main {
                 break;
             }
         }
+    }
+
+    /**
+     * Handles the flow for adding income.
+     *
+     * @param scanner scanner used for reading user input
+     * @param incomes list of incomes
+     */
+    private static void handleAddIncome(Scanner scanner, List<Double> incomes) {
+        System.out.println("Selected option: Add income");
+
+        double incomeAmount = getValidAmount(scanner, "Enter income amount:");
+
+        incomes.add(incomeAmount);
+
+        System.out.println(MESSAGE_INCOME_ADDED);
     }
 
     /**
