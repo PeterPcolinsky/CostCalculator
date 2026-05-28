@@ -31,6 +31,12 @@ public class Main {
     private static final String MESSAGE_NEGATIVE_AMOUNT =
             "Amount cannot be negative.";
 
+    private static final String MESSAGE_SELECTED_ADD_INCOME =
+            "Selected option: Add income";
+
+    private static final String MESSAGE_SELECTED_ADD_EXPENSE =
+            "Selected option: Add expense";
+
     /**
      * Entry point of the application.
      *
@@ -57,9 +63,13 @@ public class Main {
                     break;
 
                 case OPTION_ADD_EXPENSE:
-                    System.out.println("Selected option: Add expense");
-                    double expenseAmount = getValidAmount(scanner, "Enter expense amount:");
+                    System.out.println(MESSAGE_SELECTED_ADD_EXPENSE);
+
+                    double expenseAmount =
+                            getValidAmount(scanner, "Enter expense amount:");
+
                     expenses.add(expenseAmount);
+
                     System.out.println(MESSAGE_EXPENSE_ADDED);
                     break;
 
@@ -97,9 +107,10 @@ public class Main {
      * @param incomes list of incomes
      */
     private static void handleAddIncome(Scanner scanner, List<Double> incomes) {
-        System.out.println("Selected option: Add income");
+        System.out.println(MESSAGE_SELECTED_ADD_INCOME);
 
-        double incomeAmount = getValidAmount(scanner, "Enter income amount:");
+        double incomeAmount =
+                getValidAmount(scanner, "Enter income amount:");
 
         incomes.add(incomeAmount);
 
