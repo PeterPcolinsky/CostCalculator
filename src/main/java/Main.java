@@ -63,14 +63,7 @@ public class Main {
                     break;
 
                 case OPTION_ADD_EXPENSE:
-                    System.out.println(MESSAGE_SELECTED_ADD_EXPENSE);
-
-                    double expenseAmount =
-                            getValidAmount(scanner, "Enter expense amount:");
-
-                    expenses.add(expenseAmount);
-
-                    System.out.println(MESSAGE_EXPENSE_ADDED);
+                    handleAddExpense(scanner, expenses);
                     break;
 
                 case OPTION_SHOW_BALANCE:
@@ -115,6 +108,23 @@ public class Main {
         incomes.add(incomeAmount);
 
         System.out.println(MESSAGE_INCOME_ADDED);
+    }
+
+    /**
+     * Handles the flow for adding an expense.
+     *
+     * @param scanner scanner used for reading user input
+     * @param expenses list of expenses
+     */
+    private static void handleAddExpense(Scanner scanner, List<Double> expenses) {
+        System.out.println(MESSAGE_SELECTED_ADD_EXPENSE);
+
+        double expenseAmount =
+                getValidAmount(scanner, "Enter expense amount:");
+
+        expenses.add(expenseAmount);
+
+        System.out.println(MESSAGE_EXPENSE_ADDED);
     }
 
     /**
