@@ -67,15 +67,7 @@ public class Main {
                     break;
 
                 case OPTION_SHOW_BALANCE:
-                    System.out.println("Selected option: Show amount");
-
-                    double totalIncome = calculateSum(incomes);
-                    double totalExpenses = calculateSum(expenses);
-                    double balance = totalIncome - totalExpenses;
-
-                    System.out.println("Total income: " + totalIncome);
-                    System.out.println("Total expenses: " + totalExpenses);
-                    System.out.println("Current balance: " + balance);
+                    handleShowBalance(incomes, expenses);
                     break;
 
                 case OPTION_EXIT:
@@ -125,6 +117,26 @@ public class Main {
         expenses.add(expenseAmount);
 
         System.out.println(MESSAGE_EXPENSE_ADDED);
+    }
+
+    /**
+     * Handles the flow for displaying balance information.
+     *
+     * @param incomes list of incomes
+     * @param expenses list of expenses
+     */
+    private static void handleShowBalance(List<Double> incomes,
+                                          List<Double> expenses) {
+
+        System.out.println("Selected option: Show amount");
+
+        double totalIncome = calculateSum(incomes);
+        double totalExpenses = calculateSum(expenses);
+        double balance = totalIncome - totalExpenses;
+
+        System.out.println("Total income: " + totalIncome);
+        System.out.println("Total expenses: " + totalExpenses);
+        System.out.println("Current balance: " + balance);
     }
 
     /**
