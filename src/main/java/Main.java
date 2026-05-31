@@ -37,6 +37,15 @@ public class Main {
     private static final String MESSAGE_SELECTED_ADD_EXPENSE =
             "Selected option: Add expense";
 
+    private static final String MESSAGE_SELECTED_SHOW_BALANCE =
+            "Selected option: Show amount";
+
+    private static final String MESSAGE_EXIT =
+            "I'm ending the program...";
+
+    private static final String MESSAGE_WRONG_MENU_OPTION =
+            "Wrong number. Please select only 1 to 3 or 0. Thank you";
+
     /**
      * Entry point of the application.
      *
@@ -71,11 +80,11 @@ public class Main {
                     break;
 
                 case OPTION_EXIT:
-                    System.out.println("I'm ending the program...");
+                    System.out.println(MESSAGE_EXIT);
                     break;
 
                 default:
-                    System.out.println("Wrong number. Please select only 1 to 3 or 0. Thank you");
+                    System.out.println(MESSAGE_WRONG_MENU_OPTION);
                     break;
             }
 
@@ -128,7 +137,7 @@ public class Main {
     private static void handleShowBalance(List<Double> incomes,
                                           List<Double> expenses) {
 
-        System.out.println("Selected option: Show amount");
+        System.out.println(MESSAGE_SELECTED_SHOW_BALANCE);
 
         double totalIncome = calculateSum(incomes);
         double totalExpenses = calculateSum(expenses);
