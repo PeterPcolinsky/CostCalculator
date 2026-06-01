@@ -46,6 +46,12 @@ public class Main {
     private static final String MESSAGE_WRONG_MENU_OPTION =
             "Wrong number. Please select only 1 to 3 or 0. Thank you";
 
+    private static final String PROMPT_INCOME_AMOUNT =
+            "Enter income amount:";
+
+    private static final String PROMPT_EXPENSE_AMOUNT =
+            "Enter expense amount:";
+
     /**
      * Entry point of the application.
      *
@@ -104,7 +110,7 @@ public class Main {
         System.out.println(MESSAGE_SELECTED_ADD_INCOME);
 
         double incomeAmount =
-                getValidAmount(scanner, "Enter income amount:");
+                getValidAmount(scanner, PROMPT_INCOME_AMOUNT);
 
         incomes.add(incomeAmount);
 
@@ -121,7 +127,7 @@ public class Main {
         System.out.println(MESSAGE_SELECTED_ADD_EXPENSE);
 
         double expenseAmount =
-                getValidAmount(scanner, "Enter expense amount:");
+                getValidAmount(scanner, PROMPT_EXPENSE_AMOUNT);
 
         expenses.add(expenseAmount);
 
