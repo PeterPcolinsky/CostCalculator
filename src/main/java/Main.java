@@ -21,6 +21,9 @@ public class Main {
     private static final int OPTION_ADD_EXPENSE = 2;
     private static final int OPTION_SHOW_BALANCE = 3;
 
+    private static final String MESSAGE_WELCOME =
+            "Welcome to Cost Calculator!";
+
     private static final String MESSAGE_INCOME_ADDED = "Income added successfully!";
     private static final String MESSAGE_EXPENSE_ADDED = "Expense added successfully!";
     private static final String MESSAGE_INVALID_NUMBER = "Invalid input. Please enter a number.";
@@ -65,7 +68,7 @@ public class Main {
         List<Double> incomes = new ArrayList<>();
         List<Double> expenses = new ArrayList<>();
 
-        System.out.println("Welcome to Cost Calculator!");
+        System.out.println(MESSAGE_WELCOME);
 
         while (true) {
             printMenu();
@@ -194,9 +197,6 @@ public class Main {
 
     /**
      * Reads and validates a numeric amount from user input.
-     *
-     * <p>The method repeatedly asks the user for input until a valid
-     * non-negative number is entered.</p>
      *
      * @param scanner scanner used for reading user input
      * @param message message displayed to the user
