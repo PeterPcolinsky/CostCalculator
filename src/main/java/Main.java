@@ -89,16 +89,12 @@ public class Main {
                     break;
 
                 case OPTION_EXIT:
-                    System.out.println(MESSAGE_EXIT);
-                    break;
+                    handleExit();
+                    return;
 
                 default:
                     System.out.println(MESSAGE_WRONG_MENU_OPTION);
                     break;
-            }
-
-            if (choice == OPTION_EXIT) {
-                break;
             }
         }
     }
@@ -155,6 +151,13 @@ public class Main {
         System.out.println("Total income: " + totalIncome);
         System.out.println("Total expenses: " + totalExpenses);
         System.out.println("Current balance: " + balance);
+    }
+
+    /**
+     * Handles application exit.
+     */
+    private static void handleExit() {
+        System.out.println(MESSAGE_EXIT);
     }
 
     /**
