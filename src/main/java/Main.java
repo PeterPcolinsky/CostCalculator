@@ -58,8 +58,7 @@ public class Main {
     /**
      * Entry point of the application.
      *
-     * <p>Handles user interaction through console menu,
-     * processes user input and performs selected operations.</p>
+     * <p>Creates required objects and starts the application loop.</p>
      *
      * @param args command-line arguments (not used)
      */
@@ -67,6 +66,20 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         List<Double> incomes = new ArrayList<>();
         List<Double> expenses = new ArrayList<>();
+
+        runApplication(scanner, incomes, expenses);
+    }
+
+    /**
+     * Runs the main application loop.
+     *
+     * @param scanner scanner used for reading user input
+     * @param incomes list of incomes
+     * @param expenses list of expenses
+     */
+    private static void runApplication(Scanner scanner,
+                                       List<Double> incomes,
+                                       List<Double> expenses) {
 
         System.out.println(MESSAGE_WELCOME);
 
