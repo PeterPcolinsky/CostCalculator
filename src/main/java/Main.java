@@ -161,6 +161,20 @@ public class Main {
         double totalExpenses = calculateSum(expenses);
         double balance = totalIncome - totalExpenses;
 
+        printBalance(totalIncome, totalExpenses, balance);
+    }
+
+    /**
+     * Prints balance information.
+     *
+     * @param totalIncome total income amount
+     * @param totalExpenses total expense amount
+     * @param balance current balance
+     */
+    private static void printBalance(double totalIncome,
+                                     double totalExpenses,
+                                     double balance) {
+
         System.out.println("Total income: " + totalIncome);
         System.out.println("Total expenses: " + totalExpenses);
         System.out.println("Current balance: " + balance);
