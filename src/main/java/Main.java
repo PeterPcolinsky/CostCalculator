@@ -21,6 +21,9 @@ public class Main {
     private static final int OPTION_ADD_EXPENSE = 2;
     private static final int OPTION_SHOW_BALANCE = 3;
 
+    private static final int MIN_MENU_OPTION = 0;
+    private static final int MAX_MENU_OPTION = 3;
+
     private static final String MESSAGE_WELCOME =
             "Welcome to Cost Calculator!";
 
@@ -213,10 +216,19 @@ public class Main {
             try {
                 int choice = Integer.parseInt(scanner.nextLine());
 
-                if (choice >= 0 && choice <= 3) {
+                if (choice >= MIN_MENU_OPTION
+                        && choice <= MAX_MENU_OPTION) {
+
                     return choice;
+
                 } else {
-                    System.out.println("Please enter a number between 0 and 3.");
+
+                    System.out.println(
+                            "Please enter a number between "
+                                    + MIN_MENU_OPTION
+                                    + " and "
+                                    + MAX_MENU_OPTION
+                                    + ".");
                 }
 
             } catch (NumberFormatException e) {
