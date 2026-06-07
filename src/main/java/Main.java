@@ -21,8 +21,8 @@ public class Main {
     private static final int OPTION_ADD_EXPENSE = 2;
     private static final int OPTION_SHOW_BALANCE = 3;
 
-    private static final int MIN_MENU_OPTION = 0;
-    private static final int MAX_MENU_OPTION = 3;
+    private static final int MIN_MENU_OPTION = OPTION_EXIT;
+    private static final int MAX_MENU_OPTION = OPTION_SHOW_BALANCE;
 
     private static final String MESSAGE_WELCOME =
             "Welcome to Cost Calculator!";
